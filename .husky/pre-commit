@@ -1,5 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env sh
 . "$(dirname "$0")/_/husky.sh"
+. ./checks/_lib.sh
 
-yarn pretty-quick --staged
-yarn lint
+for check in $(find_check_files); do
+  printf "\nRunning check $check\n\n"
+  $check
+done

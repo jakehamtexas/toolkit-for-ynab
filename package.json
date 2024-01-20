@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "build:check": "yarn && yarn gen",
+    "build:check": "yarn && yarn tsc && yarn gen",
     "build:webpack": "webpack",
     "build:beta": "yarn build:check && yarn webpack:beta && yarn manifest:beta && yarn compress",
     "build:development": "yarn build:check && yarn webpack:development && yarn manifest:development",
